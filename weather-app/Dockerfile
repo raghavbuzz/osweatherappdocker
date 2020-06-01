@@ -14,6 +14,6 @@ RUN dotnet publish -c Release -o out
 # Generate runtime image
 FROM microsoft/aspnetcore-build:2.0.0
 WORKDIR /app
-EXPOSE 80
+EXPOSE 5000
 COPY --from=build-env /app/out .
 ENTRYPOINT ["dotnet", "weather-app.dll"]
