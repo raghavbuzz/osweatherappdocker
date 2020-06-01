@@ -16,4 +16,4 @@ FROM microsoft/aspnetcore-build:2.0.0
 WORKDIR /app
 EXPOSE 80
 COPY --from=build-env /app/out .
-ENTRYPOINT ["dotnet", "weather-app.dll"]
+ENTRYPOINT ["dotnet", "weather-app.dll"] run --host=0.0.0.0 --port=8080
